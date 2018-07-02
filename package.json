@@ -4,9 +4,9 @@
   "description": "",
   "main": "lib/server.js",
   "scripts": {
-    "preversion": "npm run build",
+    "preversion": "npm t && npm run build",
     "version": "git add -A",
-    "prepublishOnly": "git push && git push --tags",
+    "prepublishOnly": "npm t && git push && git push --tags",
     "build": "rollup -c",
     "pretest": "npm run build",
     "test": "jest"
