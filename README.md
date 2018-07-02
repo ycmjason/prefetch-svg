@@ -1,6 +1,6 @@
 # prefetch-svg
 
-prefetch-svg is a library to prefetch `@import()` and `url()`. Replacing `import()` with its content and `url()` with a data url. 
+prefetch-svg is a library to prefetch `@import()` and `url()` in the CSS of the SVG. Replacing `import()` with its content and `url()` with a data url. 
 
 ## Motivation
 
