@@ -1,0 +1,27 @@
+{
+  "name": "svg-offline",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/server.js",
+  "scripts": {
+    "build": "npm run build:esm && npm run build:umd",
+    "build:esm": "rollup -f es -o dist/svg-offline.esm.js lib/browser.js",
+    "build:umd": "rollup -f umd -n svgOffline -o dist/svg-offline.umd.js lib/browser.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ycmjason/svg-offline.git"
+  },
+  "keywords": [],
+  "author": "Jason Yu <jason.yu@thehutgroup.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ycmjason/svg-offline/issues"
+  },
+  "homepage": "https://github.com/ycmjason/svg-offline#readme",
+  "devDependencies": {
+    "jest": "^23.2.0",
+    "rollup": "^0.62.0"
+  }
+}
