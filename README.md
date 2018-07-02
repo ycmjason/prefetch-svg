@@ -12,7 +12,7 @@ SVG can contain CSS that contains `@import()` and `url()`, this leads to bad loo
 
 Live examples:
 - Node.js (WIP)
-- [CDN](https://repl.it/@ycmjason/prefetch-svg)
+- [CDN](https://repl.it/@ycmjason/prefetch-svg-cdn)
 - [Module bundler](https://codesandbox.io/s/qv198lvqpq)
 
 ## Install
@@ -38,7 +38,7 @@ prefetchSvg('<svg>...</svg>').then(prefetchedSvg => { ... });
 
 ### Browser
 
-You can use a CDN to use this package. (see [example](https://repl.it/@ycmjason/prefetch-svg))
+You can use a CDN to use this package. (see [example](https://repl.it/@ycmjason/prefetch-svg-cdn))
 
 ```html
 <script src="https://unpkg.com/prefetch-svg/dist/prefetchSvg.umd.js"></script>
