@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/ycmjason/svg-offline.git"
   },
-  "keywords": [],
+  "keywords": ["svg", "prefetch", "offline"],
   "author": "Jason Yu <jason.yu@thehutgroup.com>",
   "license": "ISC",
   "bugs": {
