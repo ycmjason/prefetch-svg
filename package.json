@@ -6,6 +6,7 @@
   "scripts": {
     "preversion": "npm run build",
     "version": "git add -A",
+    "prepublishOnly": "git push && git push --tags",
     "build": "rollup -c",
     "pretest": "npm run build",
     "test": "jest"
