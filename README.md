@@ -13,7 +13,16 @@ prefetchSvg('<svg>...</svg>').then(prefetchedSvg => { ... });
 
 ### Browser
 
-See this example.
+You can use a CDN to use this package. (see [example](https://repl.it/@ycmjason/prefetch-svg))
+
+```html
+<script src="https://unpkg.com/prefetch-svg/dist/prefetchSvg.umd.js"></script>
+<script>
+prefetchSvg('<svg>...</svg>').then(prefetchedSvg => { ... });
+</script>
+```
+
+Or you can use module bundler. (see [example](
 
 
 ## Author

@@ -21,8 +21,8 @@ describe('prefetch-svg (browser side)', () => {
       path: require.resolve('../dist/prefetchSvg.umd.js')
     });
 
-    const input = readFileSync(require.resolve('./svg1.input'), 'utf8');
-    const output = readFileSync(require.resolve('./svg1.output'), 'utf8');
+    const input = readFileSync(require.resolve('./svg1.input.svg'), 'utf8');
+    const output = readFileSync(require.resolve('./svg1.output.svg'), 'utf8');
     expect(await page.evaluate(input => prefetchSvg(input), input)).toEqual(output);
   });
 });
