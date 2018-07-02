@@ -24,7 +24,10 @@
     return (await Promise.all(replacedParts)).join('');
   };
 
-  var PrefetchSvg = (fetch) => {
+  var PrefetchSvg = ({
+    fetch,
+    responseToBase64,
+  }) => {
     const replaceImport = async (svgString) => {
       svgString = svgString.replace(/@import url\(([^'")]*)\);/g, (match, url) => `<<${url}>>`);
       svgString = svgString.replace(/@import url\('([^']*)'\);/g, (match, url) => `<<${url}>>`);
@@ -55,9 +58,10 @@
         /<<([^>]*)>>/g,
         async (match, url) => {
           const res = await fetch(url);
-          const buffer = await res.buffer();
+          const base64 = await responseToBase64(res);
+
           const type = await res.headers.get('content-type');
-          return `url(data:${type};base64,${buffer.toString('base64')})`;
+          return `url(data:${type};base64,${base64})`;
         },
       );
 
@@ -67,7 +71,23 @@
     return svgString => Promise.resolve(svgString).then(replaceImport).then(replaceUrl);
   };
 
-  var browser = PrefetchSvg(fetch);
+  function arrayBufferToBase64(buffer) {
+      let binary = '';
+      let bytes = new Uint8Array(buffer);
+      let len = bytes.byteLength;
+      for (let i = 0; i < len; i++) {
+          binary += String.fromCharCode(bytes[i]);
+      }
+      return window.btoa(binary);
+  }
+
+  var browser = PrefetchSvg({
+    fetch,
+    responseToBase64: async res => {
+      const arrayBuffer = await res.arrayBuffer();
+      return arrayBufferToBase64(arrayBuffer);
+    },
+  });
 
   return browser;
 
