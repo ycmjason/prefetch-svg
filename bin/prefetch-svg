@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+const { writeFileSync, readFileSync, existsSync } = require('fs');
+const prefetchSvg = require('..');
+
+if (process.argv.length <= 2) {
+  console.log('Usage: prefetch-svg <input> <output>');
+  process.exit(1);
+}
+
+const [input, output] = process.argv.slice(2);
+
+if (!existsSync(input)) {
+  console.error(`Cannot find ${input}`);
+  process.exit(1);
+}
+
+if (existsSync(output)) {
+  console.error(`${output} already exists`);
+  process.exit(1);
+}
+
+prefetchSvg(readFileSync(input, 'utf8')).then(prefetched => {
+  writeFileSync(output, prefetched);
+  console.log('Success!');
+});

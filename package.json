@@ -3,6 +3,7 @@
   "version": "0.0.3",
   "description": "",
   "main": "lib/server.js",
+  "bin": "bin/prefetch-svg",
   "scripts": {
     "preversion": "npm t && npm run build",
     "version": "git add -A",

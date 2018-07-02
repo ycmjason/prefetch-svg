@@ -9,6 +9,18 @@ SVG can contain CSS that contains `@import()` and `url()`, this leads to bad loo
 Below is an example:
 ![example](examples/example1.png)
 
+## Install
+
+```
+npm install --save prefetch-svg
+```
+
+Or if you want to use the CLI
+
+```
+npm install -g prefetch-svg
+```
+
 ## Usage
 
 ### Node
@@ -34,6 +46,14 @@ Or you can use module bundler. (see [example](https://codesandbox.io/s/qv198lvqp
 ```js
 import prefetchSvg from "prefetch-svg/dist/prefetchSvg.esm.js";
 prefetchSvg('<svg>...</svg>').then(prefetchedSvg => { ... });
+```
+
+### CLI
+
+This package also provide a CLI.
+
+```
+Usage: prefetch-svg <input> <output>
 ```
 
 
