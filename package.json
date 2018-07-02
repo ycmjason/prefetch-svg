@@ -1,6 +1,6 @@
 {
   "name": "prefetch-svg",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "lib/server.js",
   "bin": "bin/prefetch-svg",
@@ -16,7 +16,11 @@
     "type": "git",
     "url": "git+https://github.com/ycmjason/svg-offline.git"
   },
-  "keywords": ["svg", "prefetch", "offline"],
+  "keywords": [
+    "svg",
+    "prefetch",
+    "offline"
+  ],
   "author": "Jason Yu <jason.yu@thehutgroup.com>",
   "license": "ISC",
   "bugs": {
