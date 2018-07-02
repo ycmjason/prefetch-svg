@@ -67,9 +67,7 @@
     return svgString => Promise.resolve(svgString).then(replaceImport).then(replaceUrl);
   };
 
-  const prefetchSvg = PrefetchSvg(fetch);
-
-  var browser = async (svgString) => await prefetchSvg(svgString);
+  var browser = PrefetchSvg(fetch);
 
   return browser;
 
